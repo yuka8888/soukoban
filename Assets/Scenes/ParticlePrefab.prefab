@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8782819185480148963}
   - component: {fileID: -5551953983482353827}
   m_Layer: 0
-  m_Name: ParticlePrefab
+  m_Name: particlePrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -66,7 +66,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4643e262f2a9e1a4a8447e0f16524bd9, type: 2}
+  - {fileID: 2100000, guid: a8a6efb3e86c30d4eab03b04f8f6a770, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

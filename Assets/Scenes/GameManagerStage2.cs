@@ -2,33 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Net;
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class GameManagerScript : MonoBehaviour
+public class GameManagerStage2 : MonoBehaviour
 {
-
-    //void PrintArray()
-    //{
-    //    string debugText = "";
-    //    for (int y = 0; y < map.GetLength(0); y++)
-    //    {
-    //        for (int x = 0; x < map.GetLength(1); x++)
-    //        {
-    //            debugText += map[y, x].ToString() + ", ";
-    //        }
-    //        debugText += "\n";
-    //    }
-    //    Debug.Log(debugText);
-    //}
-
     void Initialize()
     {
         var objects = GameObject.FindGameObjectsWithTag("Goal");
         foreach (var obj in objects) { Destroy(obj); }
 
         clearText.SetActive(false);
-        NextStageButton.SetActive(false);
 
         for (int y = 0; y < field.GetLength(0); y++)
         {
@@ -173,7 +156,6 @@ public class GameManagerScript : MonoBehaviour
     public GameObject clearText;
     public GameObject particlePrefab;
     public GameObject wallPrefab;
-    public GameObject NextStageButton;
 
     //”z—ñ‚ÌéŒ¾
     int[,] map;
@@ -189,16 +171,6 @@ public class GameManagerScript : MonoBehaviour
 
         //”z—ñ‚ÌŽÀ‘Ô‚Ìì¬‚Æ‰Šú‰»
         map = new int[,] {
-            { 4, 4, 4, 4, 4, 4, 4},
-            { 4, 0, 0, 0, 0, 0, 4},
-            { 4, 0, 0, 1, 0, 0, 4},
-            { 4, 0, 0, 2, 0, 0, 4},
-            { 4, 3, 0, 0, 0, 0, 4},
-            { 4, 0, 0, 0, 0, 0, 4},
-            { 4, 4, 4, 4, 4, 4, 4},
-        };
-
-        map2 = new int[,] {
             { 4, 4, 4, 4, 4, 4, 4},
             { 4, 0, 0, 0, 0, 0, 4},
             { 4, 0, 3, 1, 3, 0, 4},
@@ -228,7 +200,7 @@ public class GameManagerScript : MonoBehaviour
             Initialize();
         }
 
-        if (!IsCleard())
+        //if (IsCleard())
         {
             //‰EˆÚ“®
             if (Input.GetKeyDown(KeyCode.RightArrow))
@@ -278,11 +250,7 @@ public class GameManagerScript : MonoBehaviour
                     clearText.SetActive(true);
                 }
             }
-            
-        }
-        else
-        {
-            NextStageButton.SetActive(true);
+
         }
 
     }

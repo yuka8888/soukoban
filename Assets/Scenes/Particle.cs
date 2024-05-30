@@ -17,7 +17,8 @@ public class Particle : MonoBehaviour
     {
         lifeTime = 0.3f;
         leftLifeTime = lifeTime;
-        defaultScale = transform.localScale;
+        defaultScale = new Vector3(0.5f, 0.5f, 0.5f);
+        transform.localScale = defaultScale;
         //ランダムで決まる移動量の最大値
         float maxVelocity = 5;
         //各方向へランダムで飛ばす
